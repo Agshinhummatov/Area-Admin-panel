@@ -1,0 +1,26 @@
+﻿@model SliderBackground
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container my-5">
+
+
+    <div class="slider-content my-5">
+        <img style="width:500px;" src="~/assets/img/@Model.Image" />
+    </div>
+
+    <form class="forms-smaple">
+        <input type="file" class="form-control" id="customFile" />
+        <div class="buttons my-3">
+
+            <button type="submit" class="btn  btn-primary mr-2 ">Submit</button>
+            <a class="btn btn-info" asp-action="Index">Cancel</a>
+        </div>
+    </form>
+
+
+
+</div>

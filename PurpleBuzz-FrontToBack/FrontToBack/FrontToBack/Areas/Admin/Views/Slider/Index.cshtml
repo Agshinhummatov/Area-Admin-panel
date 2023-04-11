@@ -1,0 +1,65 @@
+﻿@model SliderBackground
+
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+
+
+
+<div class="container">
+
+
+    <!-- Basic Bootstrap Table -->
+    <div class="card">
+        <h4 class="card-title text-center" style=" text-align:center">Slider</h4>
+        <div class="table-responsive text-nowrap">
+            <a class="btn btn-success text-white" asp-action="Create" style="float:right;">Create</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Status</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+
+                    
+                        <tr>
+                            <td class="py-1">
+                            <img style="width:100px;height:100px; border-radius:50%" src="~/assets/img/@Model.Image" />
+                            </td>
+                            <td>
+                                @if (Model.SoftDelete)
+                                {
+                                    <div class="deActive-status"></div>
+                                }
+                                else
+                                {
+                                    <div class="active-status"></div>
+                                }
+
+
+
+
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@Model.Id">Info</a>
+                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                                <a class="btn btn-outline-danger">Delete</a>
+                            </td>
+
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--/ Basic Bootstrap Table -->
+
+</div>
